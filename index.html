@@ -80,6 +80,7 @@
     <a href="#tracks" class="block px-4 py-3 border-b border-blue-800">TRACKS</a>
     <a href="#committee" class="block px-4 py-3 border-b border-blue-800">COMMITTEE</a>
     <a href="#cfp" class="block px-4 py-3 border-b border-blue-800">CALL FOR PAPERS</a>
+     <a href="#pub" class="block px-4 py-3 border-b border-blue-800">PUBLICATION</a>
     <a href="#registration" class="block px-4 py-3 border-b border-blue-800">REGISTRATION</a>
     <a href="#contact" class="block px-4 py-3">CONTACT</a>
 </div>
@@ -739,27 +740,28 @@
     </div>
   </footer>
 
-  <script>
-    // MOBILE MENU LOGIC
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const nav = document.querySelector('nav');
-    menuBtn?.addEventListener('click', () => {
-      nav.classList.toggle('hidden');
-    });
+ <script>
+  // MOBILE MENU
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
 
-    // COUNTDOWN LOGIC
-    const targetDate = new Date("2027-01-15T00:00:00").getTime();
+  menuBtn?.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+  });
 
-    function updateCountdown() {
+  // COUNTDOWN
+  const targetDate = new Date("2027-01-15T00:00:00").getTime();
+
+  function updateCountdown() {
       const now = new Date().getTime();
       const diff = targetDate - now;
 
       if (diff <= 0) {
-        document.getElementById('days').innerText = "00";
-        document.getElementById('hours').innerText = "00";
-        document.getElementById('minutes').innerText = "00";
-        document.getElementById('seconds').innerText = "00";
-        return;
+          document.getElementById('days').innerText = "00";
+          document.getElementById('hours').innerText = "00";
+          document.getElementById('minutes').innerText = "00";
+          document.getElementById('seconds').innerText = "00";
+          return;
       }
 
       const d = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -771,23 +773,20 @@
       document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
       document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
       document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
-    }
+  }
 
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
 
-<script>
-  // MOBILE MENU LOGIC
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const nav = document.querySelector('nav');
-  menuBtn?.addEventListener('click', () => {
-    nav.classList.toggle('hidden');
-  });
-
-  // COUNTDOWN LOGIC
+  // Close menu after clicking a link
+document.querySelectorAll('#mobile-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+    });
+});
 </script>
-</body>
+
 
 </body>
+
 </html>
