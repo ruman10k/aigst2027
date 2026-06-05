@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIGST 2027 - International Conference</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --conference-orange: #f5a623; }
+    body { font-family: 'Inter', sans-serif; }
+    .bg-conference-orange { background-color: var(--conference-orange) !important; }
+    .text-conference-orange { color: var(--conference-orange) !important; }
+    
+    /* Offset for sticky header when jumping to sections */
+    section { scroll-margin-top: 120px; }
+
+    /* Custom scrollbar for better aesthetics */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: #1e40af; border-radius: 10px; }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+  <header class="w-full shadow-lg sticky top-0 z-50 bg-white">
+    <div class="border-b border-slate-200 py-3">
+      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="assets/logo.png" alt="College Logo" class="h-12 md:h-16 w-auto" />
+          <div class="md:hidden">
+            <button id="mobile-menu-btn" class="p-2 text-slate-600">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="hidden md:block text-center flex-1">
+          <h1 class="text-xl lg:text-2xl font-black text-slate-800 leading-tight uppercase tracking-tight">
+            International Conference on AI Innovations in Green and Sustainable Technologies (AIGST-2027)
+          </h1>
+          <p class="text-sm font-bold text-blue-800 mt-1 uppercase tracking-widest">
+            Tripura Institute of Technology Narsingarh, Agartala
+          </p>
+           <p class="text-sm font-bold text-blue-800 mt-1 uppercase tracking-widest">
+            Conference Date: January 15-16, 2027 (Hybrid Mode)
+
+          </p>
+        </div>
+
+        <div class="hidden sm:block">
+          
+        </div>
+      </div>
+    </div>
+
+    <nav class="bg-blue-900 text-white shadow-inner hidden md:block">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-center space-x-1 py-1">
+          <a href="#home" class="px-4 py-3 rounded-md bg-conference-orange font-bold text-white shadow-md">HOME</a>
+          <a href="#about" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">ABOUT</a>
+          <a href="#tracks" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">TRACKS</a>
+          <a href="#committee" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">COMMITTEE</a>
+          <a href="#cfp" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">CALL FOR PAPERS</a>
+          <a href="#registration" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">REGISTRATION</a>
+          <a href="#contact" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">CONTACT</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div id="home" class="bg-yellow-400 text-slate-900 font-black text-center py-2 px-3 text-sm md:text-base animate-pulse">
+      🚨 Paper Submission Deadline — 15 September 2026
+    </div>
+
+    <section class="relative min-h-[700px] bg-cover bg-center flex items-center justify-center overflow-hidden" 
+             style="background-image:url('assets/banner1.jpg')">
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <div class="relative z-10 text-white px-4 text-center max-w-5xl w-full">
+        <div class="bg-white/10 backdrop-blur-sm p-8 md:p-14 rounded-[30px] border border-white/20 mx-auto">
+          <h2 class="text-lg md:text-xl font-bold text-conference-orange uppercase tracking-[0.3em] mb-4">1st International Conference</h2>
+          <h1 class="text-3xl md:text-6xl font-black leading-tight uppercase tracking-tighter drop-shadow-2xl">
+            AIGST-2027
+          </h1>
+
+          <div class="mt-10 pt-10 border-t border-white/10">
+            <p class="text-gray-400 text-lg font-bold uppercase tracking-widest">Venue & Date</p>
+            <p class="text-2xl md:text-4xl font-extrabold mt-2">15th - 16th January 2027 | Tripura Institute of Technology, Agartala, India</p>
+
+            <div class="mt-12 flex justify-center gap-3 md:gap-6 flex-wrap">
+              <div class="bg-conference-orange text-white p-5 rounded-3xl min-w-[100px] md:min-w-[120px] shadow-xl">
+                <div id="days" class="text-4xl font-black">0</div>
+                <div class="text-[10px] uppercase font-bold tracking-widest mt-1">Days</div>
+              </div>
+              <div class="bg-conference-orange text-white p-5 rounded-3xl min-w-[100px] md:min-w-[120px] shadow-xl">
+                <div id="hours" class="text-4xl font-black">0</div>
+                <div class="text-[10px] uppercase font-bold tracking-widest mt-1">Hours</div>
+              </div>
+              <div class="bg-conference-orange text-white p-5 rounded-3xl min-w-[100px] md:min-w-[120px] shadow-xl">
+                <div id="minutes" class="text-4xl font-black">0</div>
+                <div class="text-[10px] uppercase font-bold tracking-widest mt-1">Mins</div>
+              </div>
+              <div class="bg-conference-orange text-white p-5 rounded-3xl min-w-[100px] md:min-w-[120px] shadow-xl">
+                <div id="seconds" class="text-4xl font-black">0</div>
+                <div class="text-[10px] uppercase font-bold tracking-widest mt-1">Secs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-4 gap-12">
+      
+      <div class="lg:col-span-3 space-y-24">
+        
+        <section id="about">
+  <div class="flex items-center gap-4 mb-8">
+    <div class="h-12 w-2 bg-blue-900 rounded-full"></div>
+    <h2 class="text-4xl font-black text-slate-800 uppercase tracking-tight">
+      About AIGST-2027
+    </h2>
+  </div>
+
+  <div class="prose prose-lg text-slate-600 max-w-none">
+    <p class="mb-6 leading-relaxed">
+      The International Conference on AI Innovations in Green and Sustainable Technologies (AIGST-2027) is an esteemed global event dedicated to advancing research and innovation in Artificial Intelligence in sustainable and environmentally friendly technologies. This conference aims to bring together researchers, industry professionals, policymakers, and students to discuss and promote the development and implementation of green technologies that can address the pressing environmental challenges of our time.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+        <h3 class="text-xl font-bold text-blue-900 mb-3">Conference Objectives</h3>
+        <ul class="list-disc pl-5">
+          <li>To provide a premier platform for presenting the latest research findings and technological advancements of AI in green and sustainable technologies.</li>
+          <li>To foster interdisciplinary collaboration and knowledge exchange among experts from diverse fields including civil, mechanical, electrical, electronics, computer science, and applied sciences.</li>
+          <li>To explore practical solutions and strategies for integrating sustainable practices in various sectors.</li>
+          <li>To engage in meaningful dialogue on policy-making and regulatory frameworks that support environmental sustainability.</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+        <h3 class="text-xl font-bold text-blue-900 mb-3">Key Themes</h3>
+         <ul class="list-disc pl-5">
+          <li>Artificial Intelligence for Green Computing and Sustainable Information Technology.</li>
+<li>Smart Grids and Renewable Energy Integration Using Intelligent Systems.</li>
+<li>Machine Learning for Energy-Efficient Circuit Design and Optimization.</li>
+<li>Intelligent Technologies for Smart and Sustainable Construction.</li>
+<li>Energy-Efficient Mechanical Systems Through Intelligent Optimization.</li>
+<li>Nanotechnology for Sustainable Applications Using Intelligent Algorithms.</li>
+<li>Intelligent Tools for Advanced Mathematical Modeling of Environmental Systems.</li>
+<li>Intelligent Solutions for Biochemical Processes in Environmental Applications.</li>
+<li>Quantum Computing and Intelligent Optimization for Energy-Efficient Solutions.</li>
+        </ul>
+      </div>
+
+
+       <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+        <h3 class="text-xl font-bold text-blue-900 mb-3">Springer Publication</h3>
+        <p>
+          Selected accepted papers will be submitted for publication in
+          Springer Communications in Computer and Information Science (CCIS),
+          subject to Springer approval and quality requirements.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+        <h3 class="text-xl font-bold text-blue-900 mb-3">Highlights of AIGST 2027</h3>
+         <ul class="list-disc pl-5">
+      <li>Keynote Addresses: Insights from leading global experts and innovators in green technologies.</li>
+<li>Technical Sessions: Presentation of peer-reviewed research papers, case studies, and innovative projects.</li>
+<li>Workshops and Tutorials: Hands-on sessions and in-depth discussions on specialized topics and emerging technologies.</li>
+<li>Panel Discussions: Conversations on current trends, future challenges, sustainability goals, and policy implications.</li>
+<li>Exhibitions and Demonstrations: Showcasing the latest products, technologies, and solutions from industry leaders, researchers, and startups.</li>
+        </ul>
+      </div>
+
+
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+        <h3 class="text-xl font-bold text-blue-900 mb-3">Who Should Attend:</h3>
+        <p>
+<li>Researchers and academicians focused on sustainable and green technologies.</li>
+<li>Industry professionals and practitioners seeking to implement sustainable solutions.</li>
+<li>Policymakers and government officials involved in environmental regulations and sustainability initiatives.</li>
+<li>Students and early-career professionals eager to learn and network with experts in the field.</li>
+
+
+        </p>
+      </div>
+
+      
+            <div class="p-8 bg-blue-900 text-white rounded-[40px] shadow-lg transition hover:-translate-y-2">
+              <div class="text-conference-orange text-3xl font-black mb-4">Join us</div>
+              <h4 class="text-xl font-bold mb-3">Join us at AIGST 2027</h4>
+              <p class="text-blue-100 text-sm"><b>Contribute to the global dialogue on sustainability, share your research and innovations, and collaborate with like-minded professionals dedicated to creating a greener future. Please visit our official website or contact the organizing committee for more information and updates. We look forward to welcoming you to this impactful and inspiring event.</b></p>
+            </div>
+            
+          
+
+
+
+
+
+
+    </div>
+  </div>
+</section>
+
+        <section id="tracks">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="h-12 w-2 bg-blue-900 rounded-full"></div>
+            <h2 class="text-4xl font-black text-slate-800 uppercase tracking-tight">Technical Tracks</h2>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="p-8 bg-blue-900 text-white rounded-[40px] shadow-lg transition hover:-translate-y-2">
+              <div class="text-conference-orange text-3xl font-black mb-4">Track 1</div>
+              <h4 class="text-xl font-bold mb-3">Computer Science </h4>
+              <p class="text-blue-100 text-sm">
+
+                <li>Green Computing and Sustainable Information Technology with Intelligent Solutions.</li>
+<li>Artificial Intelligence for Smart Cities and Sustainable Internet of Things (IoT) Applications.</li>
+<li>Big Data Analytics and Artificial Intelligence for Environmental Monitoring and Management.</li>
+<li>Artificial Intelligence-Driven Climate Modeling, Prediction, and Simulation.</li>
+<li>Sustainable Software Engineering and Systems Design Using Intelligent Tools.</li>
+<li>Artificial Intelligence for Cyber-Physical Systems in Green Technologies.</li>
+<li>Artificial Intelligence and Blockchain for Sustainable Supply Chain Management.</li>
+              </p>
+            </div>
+            <div class="p-8 bg-white border-2 border-slate-100 rounded-[40px] shadow-sm transition hover:border-conference-orange">
+              <div class="text-blue-900 text-3xl font-black mb-4">Track 2</div>
+              <h4 class="text-xl font-bold text-slate-800 mb-3">Electronics Engineering</h4>
+              <p class="text-slate-500 text-sm">
+                <li>Energy-Efficient Circuit Design and Optimization with Intelligent Systems.</li>
+<li>Machine Learning Applications in Green Semiconductor Technologies.</li>
+<li>Intelligent Wearable Electronics for Environmental Monitoring and Sustainability.</li>
+<li>Advanced Solutions for Sustainable Electronic Waste Management Using Intelligent Technologies.</li>
+<li>Enhanced Communication Systems for Sustainability Through Intelligent Technologies.</li>
+<li>Smart Environmental Monitoring and Management Using Sensors and Advanced Algorithms.</li>
+<li>Flexible and Organic Electronics Powered by Intelligent Technologies.</li>
+              </p>
+            </div>
+            <div class="p-8 bg-blue-900 text-white rounded-[40px] shadow-lg transition hover:-translate-y-2">
+               <div class="text-conference-orange text-3xl font-black mb-4">Track 3</div>
+              <h4 class="text-xl font-bold mb-3">Electrical Engineering</h4>
+              <p class="text-blue-100 text-sm">
+
+              <li>Smart Grids and Renewable Energy Integration Using Intelligent Systems.</li>
+<li>Intelligent Energy Storage Solutions for Sustainable Power Systems.</li>
+<li>Advanced Optimization, Control, and Management of Modern Power Systems.</li>
+<li>Machine Learning Applications in Electric Vehicle and Battery Technologies.</li>
+<li>Intelligent Design and Optimization of Sustainable Power Electronics.</li>
+<li>Predictive Control and Monitoring of Electrical Systems Using Advanced Technologies.</li>
+<li>Enhancing Energy Efficiency in Internet of Things (IoT) Networks Through Intelligent Approaches.</li>
+              </p>
+            </div>
+
+            <div class="p-8 bg-blue-900 text-white rounded-[40px] shadow-lg transition hover:-translate-y-2">
+              <div class="text-conference-orange text-3xl font-black mb-4">Track 4</div>
+              <h4 class="text-xl font-bold mb-3">Civil Engineering</h4>
+              <p class="text-blue-100 text-sm">
+
+                <li>Artificial Intelligence in Smart and Sustainable Construction.</li>
+<li>Urban Planning and Green Infrastructure Development Using Advanced Technologies.</li>
+<li>Machine Learning Applications for Waste Management and Recycling Systems.</li>
+<li>Enhanced Structural Health Monitoring Using Intelligent Solutions.</li>
+<li>Climate-Resilient Transportation Networks Powered by Intelligent Systems.</li>
+<li>Water Resources Management, Conservation, and Optimization with Advanced Tools.</li>
+<li>Automation and Intelligent Technologies in Sustainable Building Design.</li>
+              </p>
+            </div>
+            <div class="p-8 bg-white border-2 border-slate-100 rounded-[40px] shadow-sm transition hover:border-conference-orange">
+              <div class="text-blue-900 text-3xl font-black mb-4">Track 5</div>
+              <h4 class="text-xl font-bold text-slate-800 mb-3">Mechanical Engineering</h4>
+              <p class="text-slate-500 text-sm">
+                <li>Energy-Efficient Mechanical Systems with Intelligent Technologies.</li>
+<li>Optimized Renewable Energy Systems Using Machine Learning Techniques.</li>
+<li>Intelligent Solutions for Sustainable Manufacturing and Production Processes.</li>
+<li>Predictive Maintenance of Mechanical Systems Using Advanced Algorithms.</li>
+<li>Robotics for Green Manufacturing Driven by Intelligent Systems.</li>
+<li>Machine Learning Applications in HVAC System Optimization and Energy Management.</li>
+<li>Intelligent Methods for Sustainable Materials Design and Development.</li>
+              </p>
+            </div>
+            <div class="p-8 bg-blue-900 text-white rounded-[40px] shadow-lg transition hover:-translate-y-2">
+               <div class="text-conference-orange text-3xl font-black mb-4">Track 6</div>
+              <h4 class="text-xl font-bold mb-3">Applied Science (Physics, Chemistry, and Mathematics)</h4>
+              <p class="text-blue-100 text-sm">
+
+             <li>Nanotechnology for Sustainable Applications Using Intelligent Systems.</li>
+<li>Quantum Computing for Energy-Efficient Solutions with Advanced Algorithms.</li>
+<li>Theoretical and Computational Physics for Green Innovations Using Intelligent Tools.</li>
+<li>Enhanced Mathematical Modeling of Environmental Systems with Intelligent Approaches.</li>
+<li>Optimization Techniques for Sustainable Processes Using Advanced Technologies.</li>
+<li>Green Chemistry and Sustainable Processes Enabled by Intelligent Methods.</li>
+<li>Intelligent Solutions in Biochemical Processes for Environmental Applications.</li>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="cfp" class="bg-slate-900 text-white p-10 md:p-16 rounded-[50px] shadow-2xl overflow-hidden relative">
+          <div class="relative z-10">
+            <h2 class="text-4xl font-black mb-6">Call For Papers</h2>
+            <p class="text-slate-400 text-lg mb-8 max-w-2xl">We invite authors to submit original research papers. All submissions will be double-blind peer-reviewed by experts in the field.</p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#" class="bg-conference-orange px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition">Download Template</a>
+              <a href="#" class="bg-white text-slate-900 px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition">Submit via Microsoft CMT</a>
+            </div>
+          </div>
+          <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl"></div>
+        </section>
+
+        <section id="committee" class="py-16">
+
+    <div class="flex items-center gap-4 mb-10">
+        <div class="h-12 w-2 bg-blue-900 rounded-full"></div>
+        <h2 class="text-4xl font-black text-slate-800 uppercase tracking-tight">
+            Organizing Committee
+        </h2>
+    </div>
+
+    <!-- Chief Patron -->
+    <div class="bg-white rounded-3xl shadow-lg p-8 mb-8 border-l-8 border-blue-900">
+        <h3 class="text-2xl font-bold text-blue-900 mb-3">Chief Patron</h3>
+        <p class="text-lg font-semibold">Shri A. Debbarma</p>
+        <p class="text-slate-600">
+            Director, Education (Higher) Department,<br>
+            Government of Tripura
+        </p>
+    </div>
+
+    <!-- Conference Chair -->
+    <div class="bg-white rounded-3xl shadow-lg p-8 mb-8 border-l-8 border-orange-500">
+        <h3 class="text-2xl font-bold text-blue-900 mb-3">Conference Chair</h3>
+        <p class="text-lg font-semibold">Prof. Bijoy Kr. Upadhyaya</p>
+        <p class="text-slate-600">
+            Principal,<br>
+            Tripura Institute of Technology
+        </p>
+    </div>
+
+    <!-- Organizing Chair -->
+    <div class="bg-white rounded-3xl shadow-lg p-8 mb-8 border-l-8 border-green-600">
+        <h3 class="text-2xl font-bold text-blue-900 mb-3">Organizing Chair</h3>
+        <p class="text-lg font-semibold">Prof. Ankur Biswas</p>
+        <p class="text-slate-600">
+            HOD, Computer Science & Engineering,<br>
+            Tripura Institute of Technology
+        </p>
+    </div>
+
+    <!-- Programme Chair -->
+    <div class="bg-white rounded-3xl shadow-lg p-8 mb-8">
+        <h3 class="text-2xl font-bold text-blue-900 mb-6">Programme Chairs</h3>
+
+        <div class="grid md:grid-cols-2 gap-4">
+
+            <div class="border rounded-xl p-4">
+                <h4 class="font-bold">Prof. Jhunu Debbarma</h4>
+                <p class="text-sm text-slate-600">
+                    Dean (Academics), Tripura Institute of Technology
+                </p>
+            </div>
+
+            <div class="border rounded-xl p-4">
+                <h4 class="font-bold">Prof. Jayanta Chakraborty</h4>
+                <p class="text-sm text-slate-600">
+                    Food Processing Technology, Tripura Institute of Technology
+                </p>
+            </div>
+
+            <div class="border rounded-xl p-4">
+                <h4 class="font-bold">Prof. Kaberi Majumder</h4>
+                <p class="text-sm text-slate-600">
+                    Electrical Engineering, Tripura Institute of Technology
+                </p>
+            </div>
+
+            <div class="border rounded-xl p-4">
+                <h4 class="font-bold">Dr. Angshuman Chakraborty</h4>
+                <p class="text-sm text-slate-600">
+                    Electronics & Communication Engineering,
+                    Tripura Institute of Technology
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Organizing Committee -->
+    <div class="bg-white rounded-3xl shadow-lg p-8 mb-8">
+        <h3 class="text-2xl font-bold text-blue-900 mb-6">
+            Organizing Committee
+        </h3>
+
+        <div class="grid md:grid-cols-2 gap-4">
+
+            <div>Prof. Gitanjali Saha</div>
+            <div>Dr. Bijoy Kr. Deb</div>
+
+            <div>Prof. Subhendu Banik</div>
+            <div>Dr. Somdeep Chakraborty</div>
+
+            <div>Prof. Kabir Chakraborty</div>
+            <div>Dr. Susanta Das Baishnab</div>
+
+            <div>Prof. Dipak Debbarma</div>
+            <div>Rupanjal Debbarma</div>
+
+            <div>Prof. Aditi Datta</div>
+            <div>Jibesh Datta</div>
+
+            <div>Prof. Adwitya Gope</div>
+            <div>Bharat Sarkar</div>
+
+            <div>Dr. Trupa Sarkar</div>
+            <div>Ruman Sarkar</div>
+
+        </div>
+    </div>
+
+    <!-- Publication Chairs -->
+    <div class="bg-white rounded-3xl shadow-lg p-8 mb-8">
+        <h3 class="text-2xl font-bold text-blue-900 mb-6">
+            Publication Chairs
+        </h3>
+
+        <div class="space-y-4">
+
+            <div>
+                <h4 class="font-bold">Prof. Sanjoy Mitra</h4>
+                <p class="text-sm text-slate-600">
+                    Computer Science & Engineering,
+                    Tripura Institute of Technology
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold">Dr. Nirmalya Das</h4>
+                <p class="text-sm text-slate-600">
+                    Electronics & Communication Engineering,
+                    Tripura Institute of Technology
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold">Dr. Subhrasmita Majumder</h4>
+                <p class="text-sm text-slate-600">
+                    Civil Engineering,
+                    Tripura Institute of Technology
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Technical Programme Chairs -->
+    <div class="bg-white rounded-3xl shadow-lg p-8 mb-8">
+        <h3 class="text-2xl font-bold text-blue-900 mb-6">
+            Technical Programme Chairs
+        </h3>
+
+        <div class="space-y-4">
+
+            <div>
+                <h4 class="font-bold">Dr. Arjun Kumar De</h4>
+                <p class="text-sm text-slate-600">
+                    Chemistry Department,
+                    Tripura Institute of Technology
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold">Sri Gautam Pal</h4>
+                <p class="text-sm text-slate-600">
+                    Computer Science & Engineering,
+                    Tripura Institute of Technology
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Finance Chairs -->
+<div class="bg-white rounded-3xl shadow-lg p-8 mb-8">
+    <h3 class="text-2xl font-bold text-blue-900 mb-6">
+        Finance Chairs
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="border rounded-xl p-5 hover:shadow-md transition">
+            <h4 class="font-bold text-lg text-slate-800">
+                Prof. Shimal Das
+            </h4>
+            <p class="text-sm text-slate-600 mt-2">
+                Computer Science & Engineering<br>
+                Tripura Institute of Technology
+            </p>
+        </div>
+
+        <div class="border rounded-xl p-5 hover:shadow-md transition">
+            <h4 class="font-bold text-lg text-slate-800">
+                Sri Bibhash Roy
+            </h4>
+            <p class="text-sm text-slate-600 mt-2">
+                Computer Science & Engineering<br>
+                Tripura Institute of Technology
+            </p>
+        </div>
+
+        <div class="border rounded-xl p-5 hover:shadow-md transition">
+            <h4 class="font-bold text-lg text-slate-800">
+                Sri Bidyut Bhattacharya
+            </h4>
+            <p class="text-sm text-slate-600 mt-2">
+                Head Office (HO)<br>
+                Tripura Institute of Technology
+            </p>
+        </div>
+
+    </div>
+</div>
+
+    <!-- Technical Committee -->
+   <!-- International Technical / Scientific Committee -->
+<div class="bg-white rounded-3xl shadow-lg p-8">
+    <h3 class="text-3xl font-bold text-blue-900 mb-8">
+        International Technical / Scientific Committee
+    </h3>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+
+        <div class="border rounded-xl p-4">Dr. Thittaporn Ganokratanaa<br><span class="text-slate-500">King Mongkut's University of Technology, Thailand</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Mohammad Shorif Uddin<br><span class="text-slate-500">Jahangirnagar University, Bangladesh</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Mrinal Bhowmik<br><span class="text-slate-500">Durham University, UK</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Kanendra Naidu<br><span class="text-slate-500">UiTM Shah Alam, Malaysia</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Arnab Purkayastha<br><span class="text-slate-500">Western New England University, USA</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Thinagaran Perumal<br><span class="text-slate-500">Universiti Putra Malaysia, Malaysia</span></div>
+
+        <div class="border rounded-xl p-4">Mr. Jay Tharwani<br><span class="text-slate-500">Software Engineer, NetApp, USA</span></div>
+
+        <div class="border rounded-xl p-4">Mr. Krishna Das<br><span class="text-slate-500">ST Microelectronics NV, Singapore</span></div>
+
+        <div class="border rounded-xl p-4">Prof. Soumik Roy<br><span class="text-slate-500">Tezpur University, Assam</span></div>
+
+        <div class="border rounded-xl p-4">Prof. Paritosh Bhattacharya<br><span class="text-slate-500">NIT Agartala</span></div>
+
+        <div class="border rounded-xl p-4">Prof. Swanirbhar Majumder<br><span class="text-slate-500">Tripura University</span></div>
+
+        <div class="border rounded-xl p-4">Prof. Ajoy Khan<br><span class="text-slate-500">Mizoram University</span></div>
+
+        <div class="border rounded-xl p-4">Prof. Debaprasad Das<br><span class="text-slate-500">School of VLSI Technology, IIEST Shibpur</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Bibhash Sen<br><span class="text-slate-500">NIT Durgapur</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Biplab Das<br><span class="text-slate-500">NIT Silchar</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Abhijit Chanda<br><span class="text-slate-500">Jadavpur University</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Alak Majumder<br><span class="text-slate-500">NIT Arunachal Pradesh</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Rita Banik<br><span class="text-slate-500">ICFAI University, Tripura</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Sukanta Roy<br><span class="text-slate-500">NIT Mizoram</span></div>
+
+        <div class="border rounded-xl p-4">Dr. P. K. D. Pramanik<br><span class="text-slate-500">Galgotias University</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Subhrajyoti Saha<br><span class="text-slate-500">ICFAI University</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Tanmoy Majumder<br><span class="text-slate-500">VIT</span></div>
+
+        <div class="border rounded-xl p-4">Dr. L. G. Malik<br><span class="text-slate-500">G.H.R.C.E., Nagpur</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Rajashree Mishra<br><span class="text-slate-500">KIIT</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Richa Sharma<br><span class="text-slate-500">LPU</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Debashish Bhowmik<br><span class="text-slate-500">Mizoram University</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Jayanta Pal<br><span class="text-slate-500">Tripura University</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Poonam Panwar<br><span class="text-slate-500">Rayat Bahra University</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Anurag De<br><span class="text-slate-500">VIT</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Sandeep Kumar Dash<br><span class="text-slate-500">NIT Mizoram</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Yambem Jina Chanu<br><span class="text-slate-500">NIT Manipur</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Mrinal Kanti Sarkar<br><span class="text-slate-500">NIT Manipur</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Mrinal Kanti Bhowmik<br><span class="text-slate-500">Tripura University</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Tamajoy Deb<br><span class="text-slate-500">DHE, Tripura</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Anish Kumar Saha<br><span class="text-slate-500">NIT Silchar</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Arnab Paul<br><span class="text-slate-500">Assam University</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Somnath Mukhopadhyay<br><span class="text-slate-500">Assam University</span></div>
+
+        <div class="border rounded-xl p-4">Dr. A.K. Maji<br><span class="text-slate-500">NEHU Shillong</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Prakash Choudhary<br><span class="text-slate-500">Central University of Rajasthan</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Sanjeet Kumar Nayak<br><span class="text-slate-500">IIITDM Kancheepuram</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Sudipta Gayen<br><span class="text-slate-500">Siksha 'O' Anusandhan</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Parijata Majumdar<br><span class="text-slate-500">Tripura University, Agartala</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Sushmita Sharma<br><span class="text-slate-500">IIIT Agartala</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Srikant Misra<br><span class="text-slate-500">GIET University</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Shawli Bardhan<br><span class="text-slate-500">Techo University</span></div>
+
+        <div class="border rounded-xl p-4">Dr. Monomita Chakraborty<br><span class="text-slate-500">VIT Andhra</span></div>
+
+    </div>
+
+    
+
+</div>
+
+
+
+</section>
+
+
+      </div>
+
+      
+
+      <aside class="space-y-8">
+        <div id="registration" class="bg-white p-8 rounded-[40px] shadow-xl border-t-8 border-conference-orange sticky top-32">
+          <h3 class="text-2xl font-black text-slate-800 mb-6">Important Dates</h3>
+          <ul class="space-y-6">
+            <li class="flex flex-col">
+              <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Submission Deadline</span>
+              <span class="text-lg font-black text-slate-800">15 Sept, 2026</span>
+            </li>
+            <li class="flex flex-col">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Acceptance Notification</span>
+              <span class="text-lg font-black text-slate-800">1 Nov, 2026</span>
+            </li>
+            <li class="flex flex-col">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Final Registration</span>
+              <span class="text-lg font-black text-slate-800">15 Nov, 2026</span>
+            </li>
+          </ul>
+          <a href="#" class="block w-full text-center mt-10 py-5 bg-blue-900 text-white rounded-2xl font-black text-lg shadow-lg hover:bg-blue-800 transition transform hover:scale-105 uppercase tracking-widest">Coming Soon</a>
+        </div>
+
+        <div class="bg-slate-100 p-8 rounded-[40px]">
+          <h4 class="font-bold text-slate-800 mb-4">Quick Downloads</h4>
+          <div class="space-y-3">
+            <a href="#" class="flex items-center gap-3 text-sm text-blue-800 font-semibold hover:underline">
+              <span>📄</span> Conference Brochure
+            </a>
+            <a href="#" class="flex items-center gap-3 text-sm text-blue-800 font-semibold hover:underline">
+              <span>📋</span> Presentation Schedule
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer id="contact" class="bg-slate-900 text-white py-20 px-4">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
+      <div>
+        <h4 class="text-2xl font-black mb-6 text-conference-orange">AIGST-2027</h4>
+        <p class="text-slate-400 leading-relaxed">
+          The premier forum for researchers and industry practitioners to share and discuss innovations in the field of Intelligent Engineering.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+        <div class="grid grid-cols-2 gap-4 text-slate-400 text-sm">
+          <a href="#home" class="hover:text-white transition">Home</a>
+          <a href="#about" class="hover:text-white transition">About</a>
+          <a href="#tracks" class="hover:text-white transition">Tracks</a>
+          <a href="#registration" class="hover:text-white transition">Registration</a>
+          <a href="#cfp" class="hover:text-white transition">Call for Papers</a>
+          <a href="#committee" class="hover:text-white transition">Committee</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xl font-bold mb-6">Contact Us</h4>
+        <ul class="text-slate-400 text-sm space-y-4">
+          <li class="flex gap-3"><span>📍</span> Tripura Institute of Technology, Narsingarh, Agartala, Tripura, India</li>
+          <li class="flex gap-3"><span>✉️</span> aigst2027@titagartala.ac.in</li>
+          <li class="flex gap-3"><span>📞</span> +91 000 000 0000</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-center text-slate-500 text-xs">
+      &copy; 2026 IEEE ORBIT Conference. All Rights Reserved. Technical Sponsor: IEEE Section.
+    </div>
+  </footer>
+
+  <script>
+    // MOBILE MENU LOGIC
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const nav = document.querySelector('nav');
+    menuBtn?.addEventListener('click', () => {
+      nav.classList.toggle('hidden');
+    });
+
+    // COUNTDOWN LOGIC
+    const targetDate = new Date("2027-01-15T00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('days').innerText = "00";
+        document.getElementById('hours').innerText = "00";
+        document.getElementById('minutes').innerText = "00";
+        document.getElementById('seconds').innerText = "00";
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = d < 10 ? '0' + d : d;
+      document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+      document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+      document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
