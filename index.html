@@ -60,20 +60,29 @@
       </div>
     </div>
 
-    <nav class="bg-blue-900 text-white shadow-inner hidden md:block">
-      <div class="max-w-7xl mx-auto px-4">
+   <nav class="bg-blue-900 text-white shadow-inner hidden md:block">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="flex items-center justify-center space-x-1 py-1">
-          <a href="#home" class="px-4 py-3 rounded-md bg-conference-orange font-bold text-white shadow-md">HOME</a>
-          <a href="#about" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">ABOUT</a>
-          <a href="#tracks" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">TRACKS</a>
-          <a href="#committee" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">COMMITTEE</a>
-          <a href="#cfp" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">CALL FOR PAPERS</a>
-          <a href="#cfp" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">REGISTRATION</a>
-         <a href="#pub" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">PUBLICATION</a>
-           <a href="#contact" class="px-4 py-3 rounded-md hover:bg-blue-800 font-semibold transition">CONTACT</a>
+            <a href="#home" class="px-4 py-3">HOME</a>
+            <a href="#about" class="px-4 py-3">ABOUT</a>
+            <a href="#tracks" class="px-4 py-3">TRACKS</a>
+            <a href="#committee" class="px-4 py-3">COMMITTEE</a>
+            <a href="#cfp" class="px-4 py-3">CALL FOR PAPERS</a>
+            <a href="#registration" class="px-4 py-3">REGISTRATION</a>
+            <a href="#contact" class="px-4 py-3">CONTACT</a>
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>
+
+<div id="mobile-nav" class="hidden md:hidden bg-blue-900 text-white">
+    <a href="#home" class="block px-4 py-3 border-b border-blue-800">HOME</a>
+    <a href="#about" class="block px-4 py-3 border-b border-blue-800">ABOUT</a>
+    <a href="#tracks" class="block px-4 py-3 border-b border-blue-800">TRACKS</a>
+    <a href="#committee" class="block px-4 py-3 border-b border-blue-800">COMMITTEE</a>
+    <a href="#cfp" class="block px-4 py-3 border-b border-blue-800">CALL FOR PAPERS</a>
+    <a href="#registration" class="block px-4 py-3 border-b border-blue-800">REGISTRATION</a>
+    <a href="#contact" class="block px-4 py-3">CONTACT</a>
+</div>
   </header>
 
   <main>
@@ -767,5 +776,18 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
   </script>
+
+<script>
+  // MOBILE MENU LOGIC
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const nav = document.querySelector('nav');
+  menuBtn?.addEventListener('click', () => {
+    nav.classList.toggle('hidden');
+  });
+
+  // COUNTDOWN LOGIC
+</script>
+</body>
+
 </body>
 </html>
